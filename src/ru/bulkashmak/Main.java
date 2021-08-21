@@ -14,9 +14,9 @@ public class Main {
         List<int[]> busStops = new ArrayList<>();
         for (int i=0; i<numberOfBusStops; i++) {
             int enter = random.nextInt(20);
-            int[] busStop = {enter, random.nextInt(busStops.stream()
-                    .mapToInt(j -> j[0])
-                    .sum())+1};
+            int[] busStop = {enter, random.nextInt((busStops.stream()
+                    .mapToInt(j -> j[0] - j[1])
+                    .sum())+1)};
             busStops.add(busStop);
         }
 
